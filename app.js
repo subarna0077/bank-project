@@ -5,7 +5,7 @@
     .controller("bankController", bankController)
     .filter("subarnaNameChange", customFilter);
 
-    bankController.inject = ["$scope", "subarnaNameChangeFilter"];
+    bankController.injector = ["$scope", "subarnaNameChangeFilter"];
 
     function bankController($scope, subarnaNameChangeFilter) { 
         $scope.nameChangeAlert = function alertMsg() {
