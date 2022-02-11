@@ -7,8 +7,12 @@
     bankController.injector = ['$scope', 'subarnaNameChangeFilter'];
 
     function bankController($scope, subarnaNameChangeFilter) { 
-        $scope.changeSubarnaName = function change() {
-                $scope.alert = subarnaNameChangeFilter($scope.subarnaName);
+        $scope.alert = function alertMsg() {
+                ret = subarnaNameChangeFilter();
+                if(ret)
+                    return "He is not " + $scope.name + ",  he is " + ret;
+                else
+                    return "";
         };
     }
 
