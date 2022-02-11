@@ -12,19 +12,20 @@
     />
 
     <link rel="stylesheet" href="style.css" />
+    <script type="text/javascript" src="angular.min.js"></script>
+    <script type="text/javascript" src="app.js"></script>
     <title>Bankist</title>
   </head>
   <body>
     <!-- TOP NAVIGATION -->
-    <nav>
-      <p class="welcome">Log in to get started</p>
+    <nav ng-app="bank" ng-controller="bankController">
+      <p class="welcome">Log in to get started and we like to start it</p>
+      
       <img src="logo.png" alt="Logo" class="logo" />
       <form class="login">
-        <input
-          type="text"
-          placeholder="user"
-          class="login__input login__input--user"
-        />
+        <input type="text" placeholder="user" class="login__input
+        login__input--user" ng-scope="subarnaName"
+         />
         <!-- In practice, use type="password" -->
         <input
           type="text"
@@ -32,6 +33,7 @@
           maxlength="4"
           class="login__input login__input--pin"
         />
+        <h1>{{subarnaNamealert();}}</h1>
         <button class="login__btn">&rarr;</button>
       </form>
     </nav>
