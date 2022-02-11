@@ -8,7 +8,7 @@
 
     function bankController($scope, subarnaNameChangeFilter) { 
         $scope.nameChangeAlert = function alertMsg() {
-                ret = subarnaNameChangeFilter();
+                ret = subarnaNameChangeFilter($scope.name);
                 if(ret)
                     return "He is not " + $scope.name + ",  he is " + ret;
                 else
