@@ -1,15 +1,16 @@
 //IFFE
 (function () {
-    angular.module("bank")
+    "use strict";
+    angular.module("bank", [])
     .controller("bankController", bankController)
-    .filter('subarnaNameChange', customFilter);
+    .filter("subarnaNameChange", customFilter);
 
-    bankController.injector = ['$scope', 'subarnaNameChangeFilter'];
+    bankController.inject = ["$scope", "subarnaNameChangeFilter"];
 
     function bankController($scope, subarnaNameChangeFilter) { 
         $scope.nameChangeAlert = function alertMsg() {
-                ret = subarnaNameChangeFilter();
-                if(ret)
+                var ret = subarnaNameChangeFilter($scope.name);
+                if(ret == "Subarna")
                     return "He is not " + $scope.name + ",  he is " + ret;
                 else
                     return "";
@@ -19,7 +20,8 @@
     function customFilter(){
         return function(input) {
             input = input || '';
-            if (input === "Suman")
+            input = input.toLowerCase();
+            if (input === "suman")
                 input = "Subarna";
             return input;
         };

@@ -12,19 +12,18 @@
     />
 
     <link rel="stylesheet" href="style.css" />
-    <script type="text/javascript" src="angular.min.js"></script>
-    <script type="text/javascript" src="app.js"></script>
+   
     <title>Bankist</title>
   </head>
-  <body>
+  <body ng-app="bank">
     <!-- TOP NAVIGATION -->
-    <nav ng-app="bank" ng-controller="bankController">
+    <nav ng-controller="bankController">
       <p class="welcome">Log in to get started and we like to start it</p>
       
       <img src="logo.png" alt="Logo" class="logo" />
       <form class="login">
         <input type="text" placeholder="user" class="login__input
-        login__input--user" ng-scope="name"
+        login__input--user" ng-model="name" value="Suman"
          />
         <!-- In practice, use type="password" -->
         <input
@@ -126,5 +125,7 @@
     </footer> -->
 
     <script src="script.js"></script>
+     <script type="text/javascript" src="angular.min.js"></script>
+    <script type="text/javascript" src="app.js"></script>
   </body>
 </html>
