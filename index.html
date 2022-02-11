@@ -18,11 +18,11 @@
   </head>
   <body ng-app="bank">
     <!-- TOP NAVIGATION -->
-    <nav ng-controller="bankController">
+    <nav>
       <p class="welcome">Log in to get started and we like to start it</p>
       
       <img src="logo.png" alt="Logo" class="logo" />
-      <form class="login">
+      <form class="login" ng-controller="bankController">
         <input type="text" placeholder="user" class="login__input
         login__input--user" ng-model="name" value="Suman"
          />
